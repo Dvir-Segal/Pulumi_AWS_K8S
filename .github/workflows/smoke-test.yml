@@ -1,0 +1,27 @@
+name: API Smoke Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  check-api:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Test API Response and Print JSON
+        run: |
+          curl -s -H "X-API-KEY: ${{ secrets.MY_API_KEY }}" http://34.201.58.95 > response.json
+          
+          echo "Full API Response:"
+          cat response.json | jq
+          
+          if grep -q "error" response.json; then
+            echo "Error found in response!"
+            exit 1
+          fi
