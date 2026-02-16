@@ -1,0 +1,7 @@
+config:
+  holiday-project:app_env: production
+  holiday-project:api_key:
+    secure: AAABABfC7iMKnsgJEcE206YyWbskbw4tvKtsNROkA7IfPvbumMl+aFlNXIMK0Cs=
+  holiday-project:cpu_limit: 500m
+  holiday-project:memory_limit: 500Mi
+  holiday-project:container_image: dvirdock/holiday-app:v2
