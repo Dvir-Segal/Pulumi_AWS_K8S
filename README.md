@@ -64,7 +64,8 @@ Every time `pulumi up` is executed, the following happens:
 
 ## 🛡 Security & Validation
 * **Endpoint Protection**: Requests without headers return `401 Unauthorized`.
-* **Health Check**: Successful authentication returns Jewish holiday JSON for the upcoming quarter.
+* **Health Check**: Successful authentication returns Jewish holiday JSON for the upcoming quarter. The following pipeline check the authentication with the api key:
+* [https://github.com/Dvir-Segal/Pulumi_AWS_K8S/blob/master/.github/workflows/smoke-test.yml](url)
 * **External URL**: `http://34.201.58.95`
 
 ---
